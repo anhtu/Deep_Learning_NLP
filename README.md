@@ -1,5 +1,5 @@
 # Deep Learning for NLP
-Various implementations of popular Deep Learning algorithms for NLP
+`[In Progress]` Various implementations of popular Deep Learning algorithms for NLP
 
 ### Dependency: [pizza](github.com/anhtu/pizza)
 
