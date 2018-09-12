@@ -1,4 +1,4 @@
-from .rnn import ElmanRNN
+from .models import ElmanRNN
 import pizza as pz
 from pz.models import *
 

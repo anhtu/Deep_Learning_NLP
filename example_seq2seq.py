@@ -1,4 +1,4 @@
-from .rnn import ElmanRNN
+from .models import Seq2Seq, Seq2SeqAttention 
 import pizza as pz
 from pz.models import *
 
