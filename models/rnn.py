@@ -8,11 +8,11 @@ class ElmanRNN(object):
     
     def __init__(self, params):
         self.__dict__.update(params)
-        n_out, n_embedding, n_hidden, n_context, w_init = self.n_out, self.n_embedding, self.n_hidden, self.n_context, self.w_init
+        n_out, n_embedding, n_hidden, n_context, w_init, n_vocab = self.n_out, self.n_embedding, self.n_hidden, self.n_context, self.w_init, self.n_vocab
         
         self.embed  = EmbeddingLayer(n_vocab+1, n_embedding, w_init=w_init)  # 1 at the end for padding 
-        self.rnn    = RNNLayer(n_embedding * n_context, n_hidden, w_init=w_init)
-        self.output = DenseLayer(n_hidden, n_out, activation=softmax, w_init=w_init) 
+        self.rnn    = RNNLayer(n_hidden, n_embedding * n_context, w_init=w_init)
+        self.output = DenseLayer(n_out, n_hidden, activation=softmax, w_init=w_init) 
         
         self.optimizer(self.learning_rate, self.clamping, [self.embed, self.rnn, self.output])
         self.hist_loss = {'train': [], 'val': []}
